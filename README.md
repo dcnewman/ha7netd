@@ -1,5 +1,13 @@
 ## ha7netd
 
+**NOTE:** This is code written back in 2005.  It has been running fine
+for me on Solaris SPARC, Solaris Intel, and Mac OS X for going on ten
+years now.  I've placed this source code on github "as-is" should anyone
+be interested.  It's all C-code based.  Much of this could be written
+more cleanly and succinctly in Perl, Python, or other "higher-level"
+languages.  However, I chose to write it in C for my own, personal
+reasons which made sense at the time.
+
 ha7netd is a daemon process which generates local weather data from
 raw data collected from [Maxim 1-Wire](http://www.maximintegrated.com/en/products/comms/one-wire.html) devices such as temperature, pressure, and
 humidity sensors.  All first and second-order temperature corrections
