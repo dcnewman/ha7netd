@@ -1,0 +1,79 @@
+# Copyright (c) 2005, Daniel C. Newman <dan.newman@mtbaldy.us>
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+#  + Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+#  + Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in
+#    the documentation and/or other materials provided with the
+#    distribution.
+#
+#  + Neither the name of mtbaldy.us nor the names of its contributors
+#    may be used to endorse or promote products derived from this
+#    software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+# FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+# COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+# OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+# AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+# OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+debug=E
+
+[ha7net=ha7-newman-1.mtbaldy.us]
+location=15 Central Ave.
+altitude=4205ft
+longitude=117.6591 W
+latitude=34.23582 N
+period=2m
+averages=10m 60m
+cmd=./xml_to_html.sh %x
+
+# EDS Humidity Sensor
+
+[devices=Humidity 1]
+location=Outdoors
+flags=outside
+7B0000001C193612
+05000800C5B47B10
+
+# AAG TAI 8570 Pressure Sensor
+
+[devices=Barometer 1]
+location=Indoors
+flags=inside
+averages=1h 3h
+C5000000237F6C12
+4700000023859912
+
+# AAG TAI 8540 Humidity Sensor
+
+[devices=Humidity 2]
+location=outside
+flags=inside
+DF0000000921D426
+
+# Next entry is to ignore the DS2417 (real-time clock with interrupt) embedded
+# in the HA7Net and which appears on the 1-Wire bus mastered by the HA7Net.
+
+[devices=HA7Net]
+~610000000C44A727
+
+
+[ignore]
+# EDS Pressure Sensor
+flags=inside
+600000001CC33D12
+8E00080013764110
