@@ -1,7 +1,7 @@
 ## ha7netd
 
 ha7netd is a daemon process which generates local weather data from
-raw data collected from (Maxim 1-Wire)[http://www.maximintegrated.com/en/products/comms/one-wire.html] devices such as temperature, pressure, and
+raw data collected from [Maxim 1-Wire](http://www.maximintegrated.com/en/products/comms/one-wire.html) devices such as temperature, pressure, and
 humidity sensors.  All first and second-order temperature corrections
 are applied as per the relevant Maxim data sheets for the devices
 in question.  More advanced weather data is computed as per meteorological
@@ -11,7 +11,7 @@ data from 12 hours previous).
 
 ha7netd communicates with 1-Wire devices using a HA7net host adapter.
 The HA7net is an ethernet to 1-Wire adapter manufactured and sold
-by (Embedded Data Systems)[http://www.embeddeddatasystems.com/].
+by [Embedded Data Systems](http://www.embeddeddatasystems.com/).
 As such, ha7netd acts as an HTTP client and talks over TCP/IP to
 a HA7net.
 
