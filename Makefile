@@ -41,6 +41,11 @@ ifeq ($(UNAME_OS), Darwin)
 BUILD_OS = Darwin
 endif
 
+ifeq ($(UNAME_OS), Linux)
+BUILD_OS = Linux
+UNAME_ARCH := $(subst /,_,$(shell uname -m))
+endif
+
 ifeq ($(BUILD_OS), Darwin)
 RM = rm -f
 MKDIR = mkdir -p
@@ -49,6 +54,17 @@ OBJ = o
 CC = cc
 CFLAGS = -g 
 LDLIBS = -lpthread
+MAKEDEP = $(CC) -MM
+endif
+
+ifeq ($(BUILD_OS), Linux)
+RM = rm -f
+MKDIR = mkdir -p
+SED = sed
+OBJ = o
+CC = cc
+CFLAGS = -g
+LDLIBS = -lresolv -lnsl -lpthread -lrt -lm
 MAKEDEP = $(CC) -MM
 endif
 
