@@ -1004,7 +1004,10 @@ xml_tohtml(xml_out_t *ctx, const char *cmd, const char *xml_fname,
 	  istat = ERR_OK;
      os_spawn_free(&argv);
 #else
-     system(buf);
+     debug("xml_tohtml(%d): Executing the command \"%s\"", __LINE__,
+           buf ? buf : "(null)");
+     istat = system(buf);
+     debug("xml_tohtml(%d): Execution result is %d", __LINE__, istat);
 #endif
 
 done:
