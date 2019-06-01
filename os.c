@@ -33,6 +33,7 @@
  */
 #include <ctype.h>
 #include <time.h>
+#include <string.h>
 #include <pthread.h>
 
 static void os_close_files(int fd_min, int fd_max);
