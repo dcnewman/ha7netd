@@ -45,7 +45,7 @@
 #include <strings.h>
 #include <errno.h>
 #include <pwd.h>
-#if defined(__sun)
+#if defined(__sun) || defined(__linux__)
 #include <signal.h>
 #endif
 
@@ -391,7 +391,7 @@ os_server_start_2(const char *user, int close_stdfiles)
 }
 
 
-#if !defined(__APPLE__)
+#if !defined(__APPLE__) && !defined(__linux__)
 typedef struct _code {
      char *c_name;
      int   c_val;
