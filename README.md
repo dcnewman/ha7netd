@@ -1,7 +1,7 @@
 ## ha7netd
 
 **NOTE:** This is code written back in 2005.  It has been running fine
-for me on Solaris SPARC, Solaris Intel, and Mac OS X for going on ten
+for me on Solaris SPARC, Solaris Intel, Mac OS X, and Raspbian for going on ten
 years now.  I've placed this source code on github "as-is" should anyone
 be interested.  It's all C-code based.  Much of this could be written
 more cleanly and succinctly in Perl, Python, or other "higher-level"
